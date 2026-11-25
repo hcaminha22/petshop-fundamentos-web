@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Petshop Patas do Rio. Produtos, banho, tosa e agendamento de cuidados para o seu pet. Projeto acadêmico PUCRS.">
+  <title>Cadastro e agendamento | Petshop Patas do Rio</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/agendamento.js" defer>
+</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<div class="topline">Manaus · Produtos e cuidados para cães e gatos</div>
+<header class="site-header">
+<div class="wrap navrow">
+  <a class="brand" href="index.html">
+<span class="brand-icon" aria-hidden="true">P</span>Patas do Rio</a>
+  <nav aria-label="Menu principal">
+<ul class="navlinks">
+<li>
+<a href="index.html">Início</a>
+</li>
+<li>
+<a href="produtos.html">Produtos</a>
+</li>
+<li>
+<a href="servicos.html">Serviços</a>
+</li>
+<li>
+<a href="contato.html">Contato</a>
+</li>
+<li>
+<a href="cadastro.html" aria-current="page" class="button">Agendar um cuidado</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="conteudo" tabindex="-1">
+<div class="wrap">
+<header class="intro">
+<p class="eyebrow">Cadastro e agendamento</p>
+<h1>Reserve um cuidado.</h1>
+<p class="lead">Preencha os dados do tutor e do pet e escolha o melhor horário.</p>
+<p class="small">Demonstração acadêmica. Utilize dados fictícios. O resumo é exibido nesta página.</p>
+</header>
+<noscript>
+<p class="error">Ative o JavaScript para validar e simular o agendamento.</p>
+</noscript>
+<form id="booking-form">
+<p class="small">Os campos marcados com * são obrigatórios.</p>
+<fieldset id="cadastro">
+<legend>Dados do cliente</legend>
+<div class="formgrid">
+<label>Nome completo *<input id="nome" name="nome" autocomplete="name" minlength="3" maxlength="100" placeholder="Ex. Hiram Caminha" required>
+</label>
+<label>CPF *<input id="cpf" name="cpf" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" aria-describedby="cpf-help" required>
+<span id="cpf-help" class="field-help">Informe os 11 dígitos do CPF fictício.</span>
+</label>
+<label>Telefone *<input id="telefone" name="telefone" type="tel" autocomplete="tel" maxlength="20" placeholder="(92) 90000-0000" required>
+</label>
+<label>E-mail *<input id="email" name="email" type="email" autocomplete="email" maxlength="100" placeholder="voce@example.com" required>
+</label>
+<div class="wide" role="group" aria-labelledby="sexo-label">
+<span id="sexo-label">Sexo *</span>
+<div class="choices">
+<label>
+<input type="radio" name="sexo" value="Feminino" required>Feminino</label>
+<label>
+<input type="radio" name="sexo" value="Masculino">Masculino</label>
+<label>
+<input type="radio" name="sexo" value="Prefiro não informar">Prefiro não informar</label>
+</div>
+</div>
+<label class="wide">Rua ou avenida *<input id="endereco" name="endereco" autocomplete="address-line1" maxlength="150" placeholder="Ex. Rua das Flores" required>
+</label>
+<label>Número *<input id="numero" name="numero" maxlength="15" placeholder="Ex. 120 ou s/n" required>
+</label>
+<label>Complemento<input id="complemento" name="complemento" autocomplete="address-line2" maxlength="100" placeholder="Apartamento, referência">
+</label>
+<label>Bairro *<input id="bairro" name="bairro" maxlength="80" placeholder="Ex. Centro" required>
+</label>
+<label>CEP *<input id="cep" name="cep" inputmode="numeric" maxlength="9" autocomplete="postal-code" placeholder="00000-000" required>
+</label>
+<label>Cidade *<input id="cidade" name="cidade" autocomplete="address-level2" value="Manaus" maxlength="80" required>
+</label>
+<label>Estado *<select id="estado" name="estado" autocomplete="address-level1" required>
+<option value="AM">Amazonas</option>
+</select>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Dados do pet</legend>
+<div class="formgrid">
+<label>Nome do pet *<input id="pet" name="pet" maxlength="60" placeholder="Ex. Mel" required>
+</label>
+<label>Raça *<input id="raca" name="raca" maxlength="60" placeholder="Ex. Poodle ou sem raça definida" required>
+</label>
+<label>Idade em anos *<input id="idade" name="idade" type="number" min="0" max="40" step="0.1" placeholder="Ex. 2" required>
+</label>
+<label>Observações<textarea id="observacoes" name="observacoes" maxlength="500" rows="2" placeholder="Conte algo sobre os cuidados com o pet">
+</textarea>
+</label>
+</div>
+</fieldset>
+<fieldset id="agendamento">
+<legend>Serviço e horário</legend>
+<div class="formgrid">
+<label class="wide">Serviço *<select id="servico" name="servico" required>
+<option value="">Selecione um serviço</option>
+<option value="banho">Banho — R$ 45,00</option>
+<option value="tosa">Tosa higiênica — R$ 35,00</option>
+</select>
+</label>
+<div class="wide" role="group" aria-labelledby="transporte-label">
+<span id="transporte-label">Como o pet chega? *</span>
+<div class="choices">
+<label>
+<input type="radio" name="transporte" value="local" required checked>Entrega no local</label>
+<label>
+<input type="radio" name="transporte" value="telebusca">Tele-busca (+ R$ 15,00)</label>
+</div>
+<p id="transport-help" class="field-help">Você leva e retira o pet no horário agendado.</p>
+</div>
+<label>Dia *<input id="data" name="data" type="date" required>
+</label>
+<label>Horário *<input id="horario" name="horario" type="time" min="08:00" max="17:00" step="1800" aria-describedby="time-help" required>
+<span id="time-help" class="field-help">08h às 17h, em intervalos de 30 minutos. Horário de Manaus.</span>
+</label>
+</div>
+<div class="estimate" aria-live="polite">
+<p id="estimate-description">Selecione um serviço para calcular o valor.</p>
+<strong id="estimate-total">Total estimado —</strong>
+</div>
+</fieldset>
+<label class="check">
+<input type="checkbox" id="ciencia" name="ciencia" required>Estou ciente de que este cadastro e agendamento são uma simulação acadêmica. *</label>
+<p id="booking-error" class="error" role="alert">
+</p>
+<div class="form-actions">
+<button class="button" type="submit">Gerar resumo do agendamento</button>
+<span class="small">Confira os dados antes de continuar.</span>
+</div>
+</form>
+<section id="booking-result" class="result" hidden aria-labelledby="result-title">
+<h2 id="result-title" tabindex="-1">Resumo do agendamento simulado</h2>
+<p>O resumo foi gerado com os dados informados.</p>
+<dl id="result-details">
+</dl>
+<button id="edit-booking" type="button" class="button secondary">Editar dados</button>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-row">
+<p>
+<strong>Petshop Patas do Rio</strong>
+<br>Produtos e cuidados para o seu pet.</p>
+<nav class="footer-links" aria-label="Menu do rodapé">
+<a href="index.html">Início</a>
+<a href="produtos.html">Produtos</a>
+<a href="servicos.html">Serviços</a>
+<a href="contato.html">Contato</a>
+<a href="cadastro.html">Agendar um cuidado</a>
+</nav>
+</div>
+  <p>&copy; 2026 Hiram de Lima Caminha · Fundamentos de Sistemas Web · PUCRS.</p>
+  <p>Petshop fictício. Produtos, preços e agendamentos são demonstrativos. <a href="https://github.com/hcaminha22">Contato do autor no GitHub</a>.</p>
+</div>
+</footer>
+</body>
+</html>
