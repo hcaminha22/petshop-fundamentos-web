@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;
-600;
-700;
-800&family=DM+Sans:wght@400;
-500;
-600;
-700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 /* Paleta e componentes compartilhados por todas as páginas. */
 :root {
   --green:#173f35;
@@ -536,10 +530,17 @@ input[type=radio],input[type=checkbox] {
   }
   .carousel-buttons {
     gap:6px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width:100%;
+  }
+  .carousel-buttons #pause {
+    grid-column:1 / -1;
   }
   .carousel-controls button {
     padding:7px 9px;
     font-size:.85rem;
+    white-space:nowrap;
   }
   .services,.products-grid,.formgrid {
     grid-template-columns:1fr;
